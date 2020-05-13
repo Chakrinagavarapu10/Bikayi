@@ -1,0 +1,41 @@
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
+  <a class="navbar-brand" href="#"><span class="first">B</span>ikayi Notes</a>
+</nav>
+ <div class="container">
+  
+  <div class="row">
+
+    <div class="col-lg-4">
+      
+      <input type="text"  #content1 placeholder="Enter Category">
+    </div>
+    <div class="col-lg-4  col-md-8 col-sm-8">
+      <textarea cols="30" #content ></textarea>
+
+    </div>
+
+    <div class="col-lg-4  col-md-4 col-sm-4">
+      <button class="btn btn-info" (click)="submitted(event)">Add Notes</button>
+    </div>
+
+  </div>
+  
+  <br>
+  <div class="row">
+    <div *ngFor="let note of notes; let i = index" class="col-lg-4 col-md-4 col-sm-4">
+      <div class="card m-1" style="width: 18rem;">
+        <div class="card-header">
+        Category is : {{note.category}}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Entered Content is:</h5>
+          <p class="card-text">{{note.data}}</p>
+          
+          <button (click)="delete(i)" class="btn btn-danger m-2">Delete</button>
+
+        </div>
+      </div>
+
+    </div>
+    </div>
+</div> 
